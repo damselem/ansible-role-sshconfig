@@ -1,0 +1,7 @@
+galaxy_info:
+  author: Daniel Salmeron Amselem
+  description: Role to manage ssh/config settings
+  license: license (GPLv2, CC-BY, etc)
+  min_ansible_version: 1.2
+  galaxy_tags: []
+dependencies: []
