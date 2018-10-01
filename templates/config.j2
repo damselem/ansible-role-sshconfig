@@ -29,5 +29,8 @@ Host {{ item.host }}
   {% if item.use_roaming is defined %}
   UseRoaming {{ item.use_roaming }}
   {% endif %}
+  {% if item.remote_forward is defined %}
+  RemoteForward {{ item.remote_forward }}
+  {% endif %}
 
 {% endfor %}
