@@ -8,6 +8,9 @@ Host {{ item.host }}
   {% if item.identity_file is defined %}
   IdentityFile {{ item.identity_file }}
   {% endif %}
+  {% if item.identities_only is defined %}
+  IdentitiesOnly {{ "yes" if item.identities_only else "no" }}
+  {% endif %}
   {% if item.forward_agent is defined %}
   ForwardAgent {{ "yes" if item.forward_agent else "no" }}
   {% endif %}
