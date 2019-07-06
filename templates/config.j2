@@ -9,13 +9,13 @@ Host {{ item.host }}
   IdentityFile {{ item.identity_file }}
   {% endif %}
   {% if item.forward_agent is defined %}
-  ForwardAgent {{ item.forward_agent }}
+  ForwardAgent {{ "yes" if item.forward_agent else "no" }}
   {% endif %}
   {% if item.user is defined %}
   User {{ item.user }}
   {% endif %}
   {% if item.password_authentication is defined %}
-  PasswordAuthentication {{ item.password_authentication }}
+  PasswordAuthentication {{ "yes" if item.password_authentication else "no" }}
   {% endif %}
   {% if item.preferred_authentications is defined %}
   PreferredAuthentications {{ item.preferred_authentications | join(",") }}
@@ -27,7 +27,7 @@ Host {{ item.host }}
   ProxyCommand {{ item.proxy_command }}
   {% endif %}
   {% if item.use_roaming is defined %}
-  UseRoaming {{ item.use_roaming }}
+  UseRoaming {{ "yes" if item.use_roaming else "no" }}
   {% endif %}
   {% if item.remote_forward is defined %}
   RemoteForward {{ item.remote_forward }}
